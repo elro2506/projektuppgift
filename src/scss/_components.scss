@@ -52,6 +52,37 @@ figcaption {
     border: 2px solid variables.$map-border;
 }
 
+.reviews {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    padding-top: 30px;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.reviews-block {
+    border: 1px solid black;
+    border-radius: 30px;
+    padding: 10px 20px 20px 20px;
+}
+
+.reviews-block:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 40px grey;
+}
+
+.stars {
+    display: flex;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+}
+
+.stars img {
+    width: 30px;
+
+}
+
 footer {
     max-width: 100%;
     background-color: variables.$footer-background;

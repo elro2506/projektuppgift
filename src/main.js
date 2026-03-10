@@ -38,3 +38,14 @@ const cities = [
     {name: "Kalmar", lat: 56.6628, lon: 16.3662},
     {name: "Simrishamn", lat: 55.5565, lon: 14.3499},
 ];
+
+//Jag hämtar API-kod från Open-Meteo för att bland annat få fram väderkoden.
+async function showWeather() {
+    const url = "https://api.open-meteo.com/v1/forecast?latitude=59.32&longitude=18.06&current=weather_code,wind_speed_10m,precipitation&forecast_days=1&wind_speed_unit=ms";
+    const response = await fetch(url);
+    const data = await response.json();
+
+    console.log(data);
+}
+
+showWeather();
