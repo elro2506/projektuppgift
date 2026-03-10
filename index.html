@@ -3,14 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="icon" type="image/x-icon" href="Solspaning.svg">
+   <link rel="icon" type="image/x-icon" href="./bilder/sol.svg">
   <link rel="stylesheet" href="./src/scss/styles.scss">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Forum&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <title>Solspaning</title>
 </head>
 
 <body>
 <header>
-    <img src="Solspaning.svg" class="logotyp">
+    <img src="./bilder/Solspaning1.svg" class="logotyp">
 </header>    
+
+<main class="container">
+    <h1 class="centrera">Vilket väder vill du ha idag?</h1>
+    <div class="bild-grid">
+        <picture>
+            <source srcset="./bilder/soligt.webp" type="image/webp">
+        <img src="./bilder/soligt.svg" alt="En sol" loading="lazy">
+        </picture>
+        <picture>
+            <source srcset="./bilder/regn.webp" type="image/webp">
+        <img src="./bilder/regn.svg" alt="Ett paraply" loading="lazy">
+        </picture>
+        <picture>
+            <source srcset="./bilder/windy.webp" type="image/webp">
+        <img src="./bilder/windy.svg" alt="Moln och vindpustar" loading="lazy">
+        </picture>
+    </div>
+</main>
 </body>
 </html>

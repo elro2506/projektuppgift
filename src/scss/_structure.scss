@@ -1,0 +1,14 @@
+@use "variables";
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-size: 1rem;
+    background-color: variables.$web-background-color;
+    font-family: "DM Sans", sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}

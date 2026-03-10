@@ -1,0 +1,38 @@
+@use "variables";
+
+.logotyp{
+    display: block;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin: 0 auto;
+    max-width: 500px;
+    width: 100%;
+}
+
+.centrera{
+    margin: 0 auto;
+    text-align: center;
+    font-size: 3rem;
+}
+
+.bild-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4rem;
+    padding-top: 30px;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+.bild-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 30px;
+    animation: hoppa 1s ease;
+}
+
+.bild-grid img:hover {
+    transform: translateY(-10px) scale(1.1);
+    cursor: pointer;
+}
