@@ -1,14 +1,24 @@
 @use "variables";
 
-html, body {
+* {
+    box-sizing: border-box; //VIll att paddings ska räknas in i totala bredden så sidan inte scrollas sidledes.
+}
+body {
     margin: 0;
     padding: 0;
     font-size: 1rem;
     background-color: variables.$web-background-color;
     font-family: "DM Sans", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
+}
+
+main {
+    flex: 1;
 }

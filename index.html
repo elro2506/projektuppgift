@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="icon" type="image/x-icon" href="./bilder/sol.svg">
-  <link rel="stylesheet" href="./src/scss/styles.scss">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Forum&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <title>Solspaning</title>
+    <title>Solspaning - hitta din sol!</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
 </head>
 
 <body>
@@ -19,19 +21,44 @@
 <main class="container">
     <h1 class="centrera">Vilket väder vill du ha idag?</h1>
     <div class="bild-grid">
+        <figure>
         <picture>
             <source srcset="./bilder/soligt.webp" type="image/webp">
         <img src="./bilder/soligt.svg" alt="En sol" loading="lazy">
         </picture>
+        <figcaption>Soligt</figcaption>
+        </figure>
+        <figure>
         <picture>
             <source srcset="./bilder/regn.webp" type="image/webp">
         <img src="./bilder/regn.svg" alt="Ett paraply" loading="lazy">
         </picture>
+        <figcaption>Regnigt</figcaption>
+        </figure>
+        <figure>
         <picture>
             <source srcset="./bilder/windy.webp" type="image/webp">
         <img src="./bilder/windy.svg" alt="Moln och vindpustar" loading="lazy">
         </picture>
+        <figcaption>Blåsigt</figcaption>
+        </figure>
     </div>
+
+     <div id="map"></div>
+
+     <h2>Vad är Solspaning?</h2>
+     <p>Solspanings syfte är att hjälpa dig att hitta städer som har vädret du önskar idag. Kanske vill du lägga dig i brassestol och sola, eller dansa i regnet? För dig som seglar kan
+        blåsten vara ett önskvärt väder.
+     </p>
 </main>
+
+<footer>
+    <h3>Solspaning</h3>
+    <p>Din lokala väderspanare</p>
+    <p>Solgatan 1</p>
+    <p>Sollentuna</p>
+</footer>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script src="./src/main.js" type="module"></script>
 </body>
 </html>

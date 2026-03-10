@@ -1,6 +1,6 @@
 @use "variables";
 
-.logotyp{
+.logotyp {
     display: block;
     padding-top: 40px;
     padding-bottom: 40px;
@@ -9,7 +9,7 @@
     width: 100%;
 }
 
-.centrera{
+.centrera {
     margin: 0 auto;
     text-align: center;
     font-size: 3rem;
@@ -35,4 +35,27 @@
 .bild-grid img:hover {
     transform: translateY(-10px) scale(1.1);
     cursor: pointer;
+}
+
+figcaption {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+#map {
+    margin-top: 80px;
+    margin-bottom: 60px;
+    height: 800px;
+    border-radius: 30px;
+    border: 2px solid variables.$map-border;
+}
+
+footer {
+    max-width: 100%;
+    background-color: variables.$footer-background;
+    padding: 10px 0 20px 20px;
+    margin-top: 20px;
+    margin-bottom: 0;
 }
