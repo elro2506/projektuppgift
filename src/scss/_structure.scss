@@ -22,3 +22,11 @@ body {
 main {
     flex: 1;
 }
+
+@media screen and (max-width: 600px) {
+    .container {
+        max-width: 100%;
+        overflow-x: hidden;
+        margin: 10px;
+    }
+}

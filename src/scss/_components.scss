@@ -17,16 +17,15 @@
 
 .bild-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 4rem;
-    padding-top: 30px;
-    margin: 0 auto;
-    max-width: 900px;
+    grid-template-columns: repeat(4, 1fr);
+        padding-top: 30px;
+margin-bottom: 100px;
+    
 }
 
 .bild-grid img {
     width: 100%;
-    height: auto;
+        height: 100%;
     display: block;
     border-radius: 30px;
     animation: hoppa 1s ease;
@@ -89,4 +88,27 @@ footer {
     padding: 10px 0 20px 20px;
     margin-top: 20px;
     margin-bottom: 0;
+}
+
+@media screen and (max-width: 600px) {
+    .bild-grid,
+    .reviews {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 600px;
+        gap: 1rem;
+        margin: 0 auto;
+    }
+
+    .bild-grid img {
+        padding: 2rem;
+    }
+    
+    figure {
+        border: 1px solid black;
+        border-radius: 30px;
+        margin-bottom: 60px;
+    }
+
+   
 }

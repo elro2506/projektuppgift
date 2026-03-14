@@ -19,28 +19,35 @@
 </header>    
 
 <main class="container">
-    <h1 class="centrera">Vilket väder vill du ha just nu?</h1>
+    <h1 class="centrera">Hej! Vilket väder vill du ha just nu?</h1>
     <div class="bild-grid">
-        <figure>
+        <figure id="sunny">
         <picture>
             <source srcset="./bilder/soligt.webp" type="image/webp">
-        <img src="./bilder/soligt.svg" alt="En sol" loading="lazy">
+        <img src="./bilder/soligt.png" alt="En sol" loading="lazy">
         </picture>
         <figcaption>Soligt</figcaption>
         </figure>
-        <figure>
+        <figure id="rainy">
         <picture>
             <source srcset="./bilder/regn.webp" type="image/webp">
-        <img src="./bilder/regn.svg" alt="Ett paraply" loading="lazy">
+        <img src="./bilder/regn.png" alt="Ett paraply" loading="lazy">
         </picture>
         <figcaption>Regnigt</figcaption>
         </figure>
-        <figure>
+        <figure id="windy">
         <picture>
             <source srcset="./bilder/windy.webp" type="image/webp">
-        <img src="./bilder/windy.svg" alt="Moln och vindpustar" loading="lazy">
+        <img src="./bilder/windy.png" alt="Moln och vindpustar" loading="lazy">
         </picture>
         <figcaption>Blåsigt</figcaption>
+        </figure>
+        <figure id="cloudy">
+        <picture>
+            <source srcset="./bilder/cloudy.webp" type="image/webp">
+        <img src="./bilder/cloudy.png" alt="Moln" loading="lazy">
+        </picture>
+        <figcaption>Molnigt</figcaption>
         </figure>
     </div>
 
@@ -56,7 +63,8 @@
         <ul>
             <li>Soligt: helt eller delvis klar himmel</li>
             <li>Regnigt: mer än 0 mm i nederbörd</li>
-            <li>Blåsigt: mer än 10 m/s i vindbyar</li>
+            <li>Blåsigt: mer än 6 m/s i vindbyar</li>
+            <li>Molnigt: mer än 50% molntäckning på himmeln. Regn kan förekomma</li>
         </ul>
         <p>Observera att datan baseras på Open-Meteos resultat och av oförutsägbara händelser kan vara felaktiga. Vi rekommenderar
             att titta ut genom fönstret för bäst resultat.
@@ -91,7 +99,7 @@
                     <p>- Christoffer</p>
             </div>
             <div class="reviews-block">
-                <h4>"Massa D-vitamin"</h4>
+                <h4>"Hatar solen"</h4>
                 <div class="stars">
                 <picture>
                     <source srcset="./bilder/star.webp" type="image/webp">
@@ -114,7 +122,7 @@
                 <img src="./bilder/star.png" alt="En stjärna">
                 </picture>
                 </div>
-                <p>Min läkare sade att jag hade brist på D-vitamin och tack vare Solspaning kunde jag sola och fylla på mitt intag.</p>
+                <p>Jag vill bara ha moln, moln och moln, blir svettig i solen. Jag hade en fantastisk heldag i ett molnigt Sundsvall.</p>
                     <p>- Marie</p>
             </div>
             <div class="reviews-block">
@@ -177,6 +185,6 @@
     <p>Sollentuna</p>
 </footer>
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script src="./src/main.js" type="module"></script>
+<script src="./src/main2.js" type="module"></script>
 </body>
 </html>
