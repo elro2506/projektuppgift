@@ -69,7 +69,9 @@ async function showSunnyWeather(city) {
     const response = await fetch(url);
     const data = await response.json();
 
-    if (data.current.weather_code <= 2) {
+    if (data.current.weather_code <= 2 &&
+        data.current.cloud_cover <= 50 &&
+        data.current.precipitation === 0) {
         L.marker([city.lat, city.lon],
             { icon: sunnyIcon }).addTo(marker)
             .bindPopup("Solen skiner här i " + city.name + "!");
@@ -117,7 +119,8 @@ async function showCloudyWeather(city) {
 
 
 
-    if (data.current.cloud_cover > 50) {
+    if (data.current.cloud_cover > 50 &&
+        data.current.precipitation === 0) {
         L.marker([city.lat, city.lon],
             { icon: cloudyIcon }).addTo(marker)
             .bindPopup("Det är molnigt här i " + city.name + "!");

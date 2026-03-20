@@ -38,6 +38,24 @@
         transform: rotate(0deg);
 }
 to {
-    transform: rotateY(720deg);
+    transform: rotate(720deg);
 }
+}
+
+@keyframes skaka {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-3px);
+    }
+    50% {
+        transform: translateX(3px);
+    }
+    75% {
+        transform: translateX(-2px);
+    }
+    100% {
+        transform: translateX(0);
+    }
 }

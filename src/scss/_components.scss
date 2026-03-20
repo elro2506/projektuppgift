@@ -132,11 +132,16 @@ footer {
         padding: 2rem;
         width: 150px;
         margin: 0 auto;
+        animation: none;
     }
 
-    .bild-grid img:hover {
+    .snurra:hover {
         transform: none;
         animation: snurra 1s linear;
+    }
+
+    .skaka:hover {
+        animation: skaka 1s linear;
     }
 
     figcaption {
