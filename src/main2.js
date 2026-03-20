@@ -83,12 +83,6 @@ async function showRainyWeather(city) {
     const response = await fetch(url);
     const data = await response.json();
 
-    console.log(city.name);
-    console.log(data.current.weather_code);
-    console.log(data.current.wind_speed_10m);
-    console.log(data.current.precipitation);
-
-
     if (data.current.precipitation > 0) {
         L.marker([city.lat, city.lon],
             { icon: rainyIcon }).addTo(marker)
@@ -103,10 +97,7 @@ async function showWindyWeather(city) {
     const response = await fetch(url);
     const data = await response.json();
 
-    console.log(city.name);
-    console.log(data.current.weather_code);
-    console.log(data.current.wind_speed_10m);
-    console.log(data.current.precipitation);
+
 
 
     if (data.current.wind_speed_10m > 6) {
@@ -123,10 +114,7 @@ async function showCloudyWeather(city) {
     const response = await fetch(url);
     const data = await response.json();
 
-    console.log(city.name);
-    console.log(data.current.weather_code);
-    console.log(data.current.wind_speed_10m);
-    console.log(data.current.precipitation);
+
 
 
     if (data.current.cloud_cover > 50) {
@@ -140,10 +128,13 @@ async function showCloudyWeather(city) {
 
 function showSunnyCities() {
     marker.clearLayers(); //för att rensa fält innan nästa klick
-const element = document.getElementById("map"); //Ikonerna är stora så kartan syns inte, så väljer att göra så att det scrollas ner till kartan vid klick.
-  element.scrollIntoView({
-    behavior: "smooth"
-  });
+   setTimeout(() => {
+    
+    const element = document.getElementById("map"); //Ikonerna är stora så kartan syns inte, så väljer att göra så att det scrollas ner till kartan vid klick.
+    element.scrollIntoView({
+        behavior: "smooth"
+    });
+}, 1000);
     cities.forEach(city => {
         showSunnyWeather(city);
     });
@@ -151,10 +142,10 @@ const element = document.getElementById("map"); //Ikonerna är stora så kartan 
 
 function showRainyCities() {
     marker.clearLayers(); //för att rensa fält innan nästa klick
-const element = document.getElementById("map");
-  element.scrollIntoView({
-    behavior: "smooth"
-  });
+    const element = document.getElementById("map");
+    element.scrollIntoView({
+        behavior: "smooth"
+    });
     cities.forEach(city => {
         showRainyWeather(city);
     });
@@ -162,10 +153,10 @@ const element = document.getElementById("map");
 
 function showWindyCities() {
     marker.clearLayers(); //för att rensa fält innan nästa klick
-const element = document.getElementById("map");
-  element.scrollIntoView({
-    behavior: "smooth"
-  });
+    const element = document.getElementById("map");
+    element.scrollIntoView({
+        behavior: "smooth"
+    });
     cities.forEach(city => {
         showWindyWeather(city);
     });
@@ -173,10 +164,10 @@ const element = document.getElementById("map");
 
 function showCloudyCities() {
     marker.clearLayers(); //för att rensa fält innan nästa klick
-const element = document.getElementById("map"); 
-  element.scrollIntoView({
-    behavior: "smooth"
-  });
+    const element = document.getElementById("map");
+    element.scrollIntoView({
+        behavior: "smooth"
+    });
     cities.forEach(city => {
         showCloudyWeather(city);
     });

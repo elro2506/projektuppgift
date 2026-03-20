@@ -23,3 +23,21 @@
     }
 }
 
+@keyframes glid-ner {
+    0% {
+        transform: translateY(-50px)
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes snurra {
+    from {
+        transform: rotate(0deg);
+}
+to {
+    transform: rotateY(720deg);
+}
+}

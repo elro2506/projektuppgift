@@ -1,0 +1,37 @@
+@use "variables";
+@media (prefers-color-scheme: dark) {
+
+    //Mörkt läge
+    body {
+        background: variables.$background-dark;
+        color: variables.$text-color-dark;
+    }
+
+
+    footer {
+        background-color: variables.$footer-dark-background;
+        color: variables.$text-primary-color
+    }
+
+.reviews-block {
+    border: 1px solid variables.$box-border-dark;
+    border-radius: 30px;
+    padding: 10px 20px 20px 20px;
+}
+
+.bild-grid figure:hover {
+  color: variables.$text-color-dark;
+}
+
+@media screen and (max-width: 600px) {
+    .bild-grid figure:hover {
+        color: variables.$text-primary-color;
+           }
+
+           .bild-grid img:hover {
+            transform: none;
+           }
+
+
+}
+}
