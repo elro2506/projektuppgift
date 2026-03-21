@@ -100,7 +100,7 @@ footer {
     margin-bottom: 0;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
     .logotyp {
         max-width: 300px;
     }
@@ -111,6 +111,10 @@ footer {
         max-width: 600px;
         gap: 2rem;
         margin: 40px;
+    }
+
+    #map {
+        height: 400px;
     }
 
 
