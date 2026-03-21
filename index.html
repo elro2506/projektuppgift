@@ -1,190 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="icon" type="image/x-icon" href="./bilder/sol.svg">
+    <link rel="icon" type="image/x-icon" href="/bilder/sol.svg">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Forum&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Forum&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
     <title>Solspaning - hitta din sol!</title>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
 
 </head>
 
 <body>
-<header>
-    <img src="./bilder/Solspaning1.svg" class="logotyp">
-</header>    
+    <header>
+        <a href="/projektuppgift/">
+            <img src="/bilder/Solspaning1.svg" class="logotyp">
+        </a>
+    </header>
 
-<main class="container">
-    <h1 class="centrera">Hej! Vilket väder vill du ha just nu?</h1>
-    <div class="bild-grid">
-        <figure id="sunny">
-        <picture>
-            <source srcset="./bilder/soligt.webp" type="image/webp">
-        <img src="./bilder/soligt.png" alt="En sol" loading="lazy" class="snurra">
-        </picture>
-        <figcaption>Soligt</figcaption>
-        </figure>
-        <figure id="rainy">
-        <picture>
-            <source srcset="./bilder/regn.webp" type="image/webp">
-        <img src="./bilder/regn.png" alt="Ett paraply" loading="lazy" class="snurra">
-        </picture>
-        <figcaption>Regnigt</figcaption>
-        </figure>
-        <figure id="windy">
-        <picture>
-            <source srcset="./bilder/windy.webp" type="image/webp">
-        <img src="./bilder/windy.png" alt="Moln och vindpustar" loading="lazy" class="skaka">
-        </picture>
-        <figcaption>Blåsigt</figcaption>
-        </figure>
-        <figure id="cloudy">
-        <picture>
-            <source srcset="./bilder/cloudy.webp" type="image/webp">
-        <img src="./bilder/cloudy.png" alt="Moln" loading="lazy" class="skaka">
-        </picture>
-        <figcaption>Molnigt</figcaption>
-        </figure>
-    </div>
-<p id="weatherText"></p>
-     <div id="map"></div>
+    <main class="container">
+        <h1 class="centrera">Hej! Vilket väder vill du ha just nu?</h1>
+        <div class="bild-grid">
+            <figure id="sunny">
+                <picture>
+                    <source srcset="/bilder/soligt.webp" type="image/webp">
+                    <img src="/bilder/soligt.png" alt="En sol" loading="lazy" class="snurra">
+                </picture>
+                <figcaption>Soligt</figcaption>
+            </figure>
+            <figure id="rainy">
+                <picture>
+                    <source srcset="/bilder/regn.webp" type="image/webp">
+                    <img src="/bilder/regn.png" alt="Ett paraply" loading="lazy" class="snurra">
+                </picture>
+                <figcaption>Regnigt</figcaption>
+            </figure>
+            <figure id="windy">
+                <picture>
+                    <source srcset="/bilder/windy.webp" type="image/webp">
+                    <img src="/bilder/windy.png" alt="Moln och vindpustar" loading="lazy" class="skaka">
+                </picture>
+                <figcaption>Blåsigt</figcaption>
+            </figure>
+            <figure id="cloudy">
+                <picture>
+                    <source srcset="/bilder/cloudy.webp" type="image/webp">
+                    <img src="/bilder/cloudy.png" alt="Moln" loading="lazy" class="skaka">
+                </picture>
+                <figcaption>Molnigt</figcaption>
+            </figure>
+        </div>
+        <p id="weatherText"></p>
+        <div id="map"></div>
 
-     <h2>Blåst av andra vädersidor?</h2>
-     <p>Du kan vara lugn. Solspanings syfte är att hjälpa dig att hitta städer som har vädret du önskar idag. 
-        Kanske vill du lägga dig i brassestol och sola, eller dansa dig dyngsur i regnet? För dig som seglar kan
-        blåsten vara ett önskvärt väder eller så vill du kanske bara ha det perfekta vädret för att flyga drake.</p>
+        <h2>Blåst av andra vädersidor?</h2>
+        <p>Du kan vara lugn. Solspanings syfte är att hjälpa dig att hitta städer som har vädret du önskar idag.
+            Kanske vill du lägga dig i brassestol och sola, eller dansa dig dyngsur i regnet? För dig som seglar kan
+            blåsten vara ett önskvärt väder eller så vill du kanske bara ha det perfekta vädret för att flyga drake.</p>
         <p>Oavsett vem du är eller vilket väder du vill ha, kan du lita på att vi på Solspaning hjälper dig.</p>
         <h3>Vad innebär resultaten?</h3>
-        <p>Resultaten utgår från Open-Meteos data, där deras parametrar berättar vilket väder det är. Vi har valt att utgå från detta:</p>
+        <p>Resultaten utgår från Open-Meteos data, där deras parametrar berättar vilket väder det är. Vi har valt att
+            utgå från detta:</p>
         <ul>
             <li>Soligt: helt eller delvis klar himmel</li>
             <li>Regnigt: mer än 0 mm i nederbörd</li>
             <li>Blåsigt: mer än 6 m/s i vindbyar</li>
             <li>Molnigt: mer än 50% molntäckning på himmeln. Regn kan förekomma</li>
         </ul>
-        <p>Observera att datan baseras på Open-Meteos resultat och av oförutsägbara händelser kan vara felaktiga. Vi rekommenderar
+        <p>Observera att datan baseras på Open-Meteos resultat och av oförutsägbara händelser kan vara felaktiga. Vi
+            rekommenderar
             att titta ut genom fönstret för bäst resultat.
         </p>
         <div class="reviews">
             <div class="reviews-block">
                 <h4>"Helt otroligt"</h4>
                 <div class="stars">
-                <picture>
-                    <source srcset="./bilder/star.webp" type="image/webp">
-                <img src="./bilder/star.png" alt="En stjärna">
-                </picture>
-                <picture>
-                    <source srcset="./bilder/star.webp" type="image/webp">
-                <img src="./bilder/star.png" alt="En stjärna">
-                </picture>
-                <picture>
-                    <source srcset="./bilder/star.webp" type="image/webp">
-                <img src="./bilder/star.png" alt="En stjärna">
-                </picture>
-                <picture>
-                    <source srcset="./bilder/star.webp" type="image/webp">
-                <img src="./bilder/star.png" alt="En stjärna">
-                </picture>
-                <picture>
-                    <source srcset="./bilder/star.webp" type="image/webp">
-                <img src="./bilder/star.png" alt="En stjärna">
-                </picture>
+                    <picture>
+                        <source srcset="/bilder/star.webp" type="image/webp">
+                        <img src="/bilder/star.png" alt="En stjärna">
+                    </picture>
+                    <picture>
+                        <source srcset="/bilder/star.webp" type="image/webp">
+                        <img src="/bilder/star.png" alt="En stjärna">
+                    </picture>
+                    <picture>
+                        <source srcset="/bilder/star.webp" type="image/webp">
+                        <img src="/bilder/star.png" alt="En stjärna">
+                    </picture>
+                    <picture>
+                        <source srcset="/bilder/star.webp" type="image/webp">
+                        <img src="/bilder/star.png" alt="En stjärna">
+                    </picture>
+                    <picture>
+                        <source srcset="/bilder/star.webp" type="image/webp">
+                        <img src="/bilder/star.png" alt="En stjärna">
+                    </picture>
                 </div>
-                <p>Jag kände för att hoppa i vattenpölar och tack vare Solspaning körde jag 5 mil till närmsta regnstad för att hoppa i mitt
+                <p>Jag kände för att hoppa i vattenpölar och tack vare Solspaning körde jag 5 mil till närmsta regnstad
+                    för att hoppa i mitt
                     livs största pöl!</p>
-                    <p>- Christoffer</p>
+                <p>- Christoffer</p>
             </div>
             <div class="reviews-block">
                 <h4>"Hatar solen"</h4>
                 <div class="stars">
-                <picture>
-                    <source srcset="./bilder/star.webp" type="image/webp">
-                <img src="./bilder/star.png" alt="En stjärna">
-                </picture>
-                <picture>
-                    <source srcset="./bilder/star.webp" type="image/webp">
-                <img src="./bilder/star.png" alt="En stjärna">
-                </picture>
-                <picture>
-                    <source srcset="./bilder/star.webp" type="image/webp">
-                <img src="./bilder/star.png" alt="En stjärna">
-                </picture>
-                <picture>
-                    <source srcset="./bilder/star.webp" type="image/webp">
-                <img src="./bilder/star.png" alt="En stjärna">
-                </picture>
-                <picture>
-                    <source srcset="./bilder/star.webp" type="image/webp">
-                <img src="./bilder/star.png" alt="En stjärna">
-                </picture>
+                    <picture>
+                        <source srcset="/bilder/star.webp" type="image/webp">
+                        <img src="/bilder/star.png" alt="En stjärna">
+                    </picture>
+                    <picture>
+                        <source srcset="/bilder/star.webp" type="image/webp">
+                        <img src="/bilder/star.png" alt="En stjärna">
+                    </picture>
+                    <picture>
+                        <source srcset="/bilder/star.webp" type="image/webp">
+                        <img src="/bilder/star.png" alt="En stjärna">
+                    </picture>
+                    <picture>
+                        <source srcset="/bilder/star.webp" type="image/webp">
+                        <img src="/bilder/star.png" alt="En stjärna">
+                    </picture>
+                    <picture>
+                        <source srcset="/bilder/star.webp" type="image/webp">
+                        <img src="/bilder/star.png" alt="En stjärna">
+                    </picture>
                 </div>
-                <p>Jag vill bara ha moln, moln och moln, blir svettig i solen. Jag hade en fantastisk heldag i ett molnigt Sundsvall.</p>
-                    <p>- Marie</p>
+                <p>Jag vill bara ha moln, moln och moln, blir svettig i solen. Jag hade en fantastisk heldag i ett
+                    molnigt Sundsvall.</p>
+                <p>- Marie</p>
             </div>
             <div class="reviews-block">
                 <h4>"Draken flög högt"</h4>
                 <div class="stars">
-                <picture>
-                    <source srcset="./bilder/star.webp" type="image/webp">
-                <img src="./bilder/star.png" alt="En stjärna">
-                </picture>
-                <picture>
-                    <source srcset="./bilder/star.webp" type="image/webp">
-                <img src="./bilder/star.png" alt="En stjärna">
-                </picture>
-                <picture>
-                    <source srcset="./bilder/star.webp" type="image/webp">
-                <img src="./bilder/star.png" alt="En stjärna">
-                </picture>
-                <picture>
-                    <source srcset="./bilder/star.webp" type="image/webp">
-                <img src="./bilder/star.png" alt="En stjärna">
-                </picture>
+                    <picture>
+                        <source srcset="/bilder/star.webp" type="image/webp">
+                        <img src="/bilder/star.png" alt="En stjärna">
+                    </picture>
+                    <picture>
+                        <source srcset="/bilder/star.webp" type="image/webp">
+                        <img src="/bilder/star.png" alt="En stjärna">
+                    </picture>
+                    <picture>
+                        <source srcset="/bilder/star.webp" type="image/webp">
+                        <img src="/bilder/star.png" alt="En stjärna">
+                    </picture>
+                    <picture>
+                        <source srcset="/bilder/star.webp" type="image/webp">
+                        <img src="/bilder/star.png" alt="En stjärna">
+                    </picture>
                 </div>
-                <p>Grabben ville flyga drake och efter att vi lyckats trassla ut snöret så hade vi en två timmar lång familjestund mitt på ett öppet, blåsigt fält.</p>
-                    <p>- Daniel</p>
+                <p>Grabben ville flyga drake och efter att vi lyckats trassla ut snöret så hade vi en två timmar lång
+                    familjestund mitt på ett öppet, blåsigt fält.</p>
+                <p>- Daniel</p>
             </div>
             <div class="reviews-block">
                 <h4>"Hemester"</h4>
                 <div class="stars">
-                <picture>
-                    <source srcset="./bilder/star.webp" type="image/webp">
-                <img src="./bilder/star.png" alt="En stjärna">
-                </picture>
-                <picture>
-                    <source srcset="./bilder/star.webp" type="image/webp">
-                <img src="./bilder/star.png" alt="En stjärna">
-                </picture>
-                <picture>
-                    <source srcset="./bilder/star.webp" type="image/webp">
-                <img src="./bilder/star.png" alt="En stjärna">
-                </picture>
-                <picture>
-                    <source srcset="./bilder/star.webp" type="image/webp">
-                <img src="./bilder/star.png" alt="En stjärna">
-                </picture>
-                <picture>
-                    <source srcset="./bilder/star.webp" type="image/webp">
-                <img src="./bilder/star.png" alt="En stjärna">
-                </picture>
+                    <picture>
+                        <source srcset="/bilder/star.webp" type="image/webp">
+                        <img src="/bilder/star.png" alt="En stjärna">
+                    </picture>
+                    <picture>
+                        <source srcset="/bilder/star.webp" type="image/webp">
+                        <img src="/bilder/star.png" alt="En stjärna">
+                    </picture>
+                    <picture>
+                        <source srcset="/bilder/star.webp" type="image/webp">
+                        <img src="/bilder/star.png" alt="En stjärna">
+                    </picture>
+                    <picture>
+                        <source srcset="/bilder/star.webp" type="image/webp">
+                        <img src="/bilder/star.png" alt="En stjärna">
+                    </picture>
+                    <picture>
+                        <source srcset="/bilder/star.webp" type="image/webp">
+                        <img src="/bilder/star.png" alt="En stjärna">
+                    </picture>
                 </div>
                 <p>Varför åka till Mallis med Gun när Solspaning hjälper mig att hitta solen?</p>
-                    <p>- Majsan</p>
+                <p>- Majsan</p>
             </div>
         </div>
-</main>
+    </main>
 
-<footer>
-    <h3>Solspaning</h3>
-    <p>Din lokala väderspanare</p>
-    <p>Solgatan 1</p>
-    <p>Sollentuna</p>
-</footer>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
-<script src="./src/main2.js" type="module"></script>
+    <footer>
+        <h3>Solspaning</h3>
+        <p>Din lokala väderspanare</p>
+        <p>Solgatan 1</p>
+        <p>Sollentuna</p>
+    </footer>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="/src/main.js" type="module"></script>
 </body>
+
 </html>
