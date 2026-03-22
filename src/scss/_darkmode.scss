@@ -13,19 +13,19 @@
         color: variables.$text-primary-color
     }
 
-.reviews-block {
-    border: 1px solid variables.$box-border-dark;
-    border-radius: 30px;
-    padding: 10px 20px 20px 20px;
-}
+    .reviews-block {
+        border: 1px solid variables.$box-border-dark;
+        border-radius: 30px;
+        padding: 10px 20px 20px 20px;
+    }
 
-.bild-grid figure:hover {
-  color: variables.$text-color-dark;
-}
-
-@media screen and (max-width: 600px) {
     .bild-grid figure:hover {
-        color: variables.$text-primary-color;
-           }
-}
+        color: variables.$text-color-dark;
+    }
+
+    @media screen and (max-width: 600px) {
+        .bild-grid figure:hover {
+            color: variables.$text-primary-color;
+        }
+    }
 }

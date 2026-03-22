@@ -2,12 +2,12 @@
 @use "components";
 
 @keyframes hoppa {
-  0% {
+    0% {
         opacity: 0;
         transform: translateY(-30px)
     }
 
-      100% {
+    100% {
         opacity: 1;
         transform: translateY(0);
     }
@@ -36,25 +36,30 @@
 @keyframes snurra {
     from {
         transform: rotate(0deg);
-}
-to {
-    transform: rotate(720deg);
-}
+    }
+
+    to {
+        transform: rotate(720deg);
+    }
 }
 
 @keyframes skaka {
     0% {
         transform: translateX(0);
     }
+
     25% {
         transform: translateX(-3px);
     }
+
     50% {
         transform: translateX(3px);
     }
+
     75% {
         transform: translateX(-2px);
     }
+
     100% {
         transform: translateX(0);
     }
