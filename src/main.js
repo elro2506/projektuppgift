@@ -36,7 +36,7 @@ var cloudyIcon = L.icon({
     iconSize: [50, 50], //Kod hämtad från Leaflet och modifierad för att passa min kod
 });
 
-var moonIcon = L.Icon({
+var moonIcon = L.icon({
     iconUrl: './bilder/moon.svg',
     iconSize: [41, 40],
 });
@@ -45,7 +45,7 @@ var moonIcon = L.Icon({
  * En karta från Leaflet och den är begränsad till Sveriges väder
  * @type {L.map}
  */
-const map = L.Map('map', {
+const map = L.map('map', {
     maxBounds: SverigeBounds,
     maxBoundsViscosity: 1.0
 }).fitBounds(SverigeBounds);
