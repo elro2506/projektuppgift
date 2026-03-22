@@ -89,7 +89,7 @@ async function showSunnyWeather(city) {
     ) {
         L.marker([city.lat, city.lon],
             { icon: moonIcon }).addTo(marker)
-            .bindPopup("Det är klart väder i " + city.name + ", men solen har gått ner");
+            .bindPopup("Det är klart väder i " + city.name + ", men solen har gått ned.");
     }
 
 }
@@ -230,7 +230,7 @@ async function showCloudyCities() {
     }
 
     if (marker.getLayers().length === 0) {
-        message.textContent = "Just nu kan ni inte bråka om det där molnet ser ut som en dinosaurie eller en clown. Bättre lycka nästa gång - det är förmodligen molnigt imorgon!";
+        message.textContent = "Just nu kan ni inte bråka om det där molnet ser ut som en dinosaurie eller en clown. Bättre lycka nästa gång!";
     }
     else {
         element.scrollIntoView({
