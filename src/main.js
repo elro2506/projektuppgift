@@ -64,7 +64,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 /**
  * En array med lista över städer och dess koordinater för att använda detta i webbapplikationen
- * @type {{name: string, lat: number, lon: numbre}[]}
+ * @type {Array<{name: string, lat: number, lon: number}>}
  */
 const cities = [
     { name: "Malmö", lat: 55.6052, lon: 13.0001 },
