@@ -1,4 +1,32 @@
-"use strict";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: main.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: main.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>"use strict";
 
 import './scss/styles.scss';
 
@@ -59,12 +87,12 @@ const marker = L.layerGroup().addTo(map); //för att senare kunna rensa kartan v
 L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     minZoom: 5, //Så att man inte zoomar ut i övriga länder
     maxZoom: 10, //Lagom inzoomning så att man ser namnet på den svenska staden
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    attribution: '&amp;copy; &lt;a href="http://www.openstreetmap.org/copyright">OpenStreetMap&lt;/a>'
 }).addTo(map);
 
 /**
  * En array med lista över städer och dess koordinater för att använda detta i webbapplikationen
- * @type {Array<{name: string, lat: number, lon: number}>}
+ * @type {Array&lt;{name: string, lat: number, lon: number}>}
  */
 const cities = [
     { name: "Malmö", lat: 55.6052, lon: 13.0001 },
@@ -90,14 +118,14 @@ const cities = [
  * @returns {Promise}
  */
 async function showSunnyWeather(city) {
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=${city.lat}&longitude=${city.lon}&current=precipitation,weather_code,wind_speed_10m,cloud_cover,is_day&forecast_days=1&wind_speed_unit=ms`;
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${city.lat}&amp;longitude=${city.lon}&amp;current=precipitation,weather_code,wind_speed_10m,cloud_cover,is_day&amp;forecast_days=1&amp;wind_speed_unit=ms`;
 
     const response = await fetch(url);
     const data = await response.json();
 
-    if (data.current.weather_code <= 2 &&
-        data.current.cloud_cover <= 50 &&
-        data.current.precipitation === 0 &&
+    if (data.current.weather_code &lt;= 2 &amp;&amp;
+        data.current.cloud_cover &lt;= 50 &amp;&amp;
+        data.current.precipitation === 0 &amp;&amp;
         data.current.is_day === 1) { //För att se om det är dagtid
         L.marker([city.lat, city.lon],
             { icon: sunnyIcon }).addTo(marker)
@@ -105,7 +133,7 @@ async function showSunnyWeather(city) {
     }
 
     else if (
-        data.current.weather_code <= 2 &&
+        data.current.weather_code &lt;= 2 &amp;&amp;
         data.current.is_day === 0
     ) {
         L.marker([city.lat, city.lon],
@@ -116,7 +144,7 @@ async function showSunnyWeather(city) {
 }
 
 async function showRainyWeather(city) {
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=${city.lat}&longitude=${city.lon}&current=precipitation,weather_code,wind_speed_10m,cloud_cover&forecast_days=1&wind_speed_unit=ms`;
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${city.lat}&amp;longitude=${city.lon}&amp;current=precipitation,weather_code,wind_speed_10m,cloud_cover&amp;forecast_days=1&amp;wind_speed_unit=ms`;
 
     const response = await fetch(url);
     const data = await response.json();
@@ -130,7 +158,7 @@ async function showRainyWeather(city) {
 }
 
 async function showWindyWeather(city) {
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=${city.lat}&longitude=${city.lon}&current=precipitation,weather_code,wind_speed_10m,cloud_cover&forecast_days=1&wind_speed_unit=ms`;
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${city.lat}&amp;longitude=${city.lon}&amp;current=precipitation,weather_code,wind_speed_10m,cloud_cover&amp;forecast_days=1&amp;wind_speed_unit=ms`;
 
     const response = await fetch(url);
     const data = await response.json();
@@ -144,7 +172,7 @@ async function showWindyWeather(city) {
 }
 
 async function showCloudyWeather(city) {
-    const url = `https://api.open-meteo.com/v1/forecast?latitude=${city.lat}&longitude=${city.lon}&current=precipitation,weather_code,wind_speed_10m,cloud_cover&forecast_days=1&wind_speed_unit=ms`;
+    const url = `https://api.open-meteo.com/v1/forecast?latitude=${city.lat}&amp;longitude=${city.lon}&amp;current=precipitation,weather_code,wind_speed_10m,cloud_cover&amp;forecast_days=1&amp;wind_speed_unit=ms`;
 
     const response = await fetch(url);
     const data = await response.json();
@@ -152,7 +180,7 @@ async function showCloudyWeather(city) {
 
 
 
-    if (data.current.cloud_cover > 50 &&
+    if (data.current.cloud_cover > 50 &amp;&amp;
         data.current.precipitation === 0) {
         L.marker([city.lat, city.lon],
             { icon: cloudyIcon }).addTo(marker)
@@ -281,4 +309,26 @@ const elementWindy = document.getElementById("windy");
 elementWindy.addEventListener("click", showWindyCities);
 
 const elementCloudy = document.getElementById("cloudy");
-elementCloudy.addEventListener("click", showCloudyCities);
+elementCloudy.addEventListener("click", showCloudyCities);</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#SverigeBounds">SverigeBounds</a></li><li><a href="global.html#cities">cities</a></li><li><a href="global.html#elementSunny">elementSunny</a></li><li><a href="global.html#map">map</a></li><li><a href="global.html#marker">marker</a></li><li><a href="global.html#showSunnyCities">showSunnyCities</a></li><li><a href="global.html#showSunnyWeather">showSunnyWeather</a></li><li><a href="global.html#sunnyIcon">sunnyIcon</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Tue Mar 24 2026 09:34:48 GMT+0100 (centraleuropeisk normaltid)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
