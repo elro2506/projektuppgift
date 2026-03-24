@@ -13,7 +13,7 @@ const SverigeBounds = [ //Vill begränsa till svenska kartan
 ];
 
 /**
- * Anpassad ikon för soligt väder
+ * Anpassad ikon för respektive väderdata
  * @type {L.icon}
  */
 var sunnyIcon = L.icon({
@@ -21,37 +21,21 @@ var sunnyIcon = L.icon({
     iconSize: [50, 50], //Kod hämtad från Leaflet och modifierad för att passa min kod
 });
 
-/**
- * Anpassad ikon för regnigt väder
- * @type {L.icon}
- */
 var rainyIcon = L.icon({
     iconUrl: './bilder/regn.svg',
     iconSize: [50, 50], //Kod hämtad från Leaflet och modifierad för att passa min kod
 });
 
-/**
- * Anpassad ikon för blåsigt väder
- * @type {L.icon}
- */
 var windyIcon = L.icon({
     iconUrl: './bilder/windy.svg',
     iconSize: [50, 50], //Kod hämtad från Leaflet och modifierad för att passa min kod
 });
 
-/**
- * Anpassad ikon för molnigt väder
- * @type {L.icon}
- */
 var cloudyIcon = L.icon({
     iconUrl: './bilder/cloudy.svg',
     iconSize: [50, 50], //Kod hämtad från Leaflet och modifierad för att passa min kod
 });
 
-/**
- * Anpassad ikon för klart väder på natten
- * @type {L.icon}
- */
 var moonIcon = L.icon({
     iconUrl: './bilder/moon.svg',
     iconSize: [41, 40],
@@ -80,7 +64,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 /**
  * En array med lista över städer och dess koordinater för att använda detta i webbapplikationen
- * @type {Array<{name: string, lat: number, lon: number}>}
+ * @type {{name: string, lat: number, lon: numbre}[]}
  */
 const cities = [
     { name: "Malmö", lat: 55.6052, lon: 13.0001 },
@@ -131,11 +115,6 @@ async function showSunnyWeather(city) {
 
 }
 
-/**
- * Hämtar väderdatan för en stad och visar en markör/ikon om vädret är regnigt.
- * @param {{name: string, lat: number, lon: number}} city - stadens namn och koordinater
- * @returns {Promise}
- */
 async function showRainyWeather(city) {
     const url = `https://api.open-meteo.com/v1/forecast?latitude=${city.lat}&longitude=${city.lon}&current=precipitation,weather_code,wind_speed_10m,cloud_cover&forecast_days=1&wind_speed_unit=ms`;
 
@@ -150,11 +129,6 @@ async function showRainyWeather(city) {
 
 }
 
-/**
- * Hämtar väderdatan för en stad och visar en markör/ikon om vädret är blåsigt.
- * @param {{name: string, lat: number, lon: number}} city - stadens namn och koordinater
- * @returns {Promise}
- */
 async function showWindyWeather(city) {
     const url = `https://api.open-meteo.com/v1/forecast?latitude=${city.lat}&longitude=${city.lon}&current=precipitation,weather_code,wind_speed_10m,cloud_cover&forecast_days=1&wind_speed_unit=ms`;
 
@@ -169,11 +143,6 @@ async function showWindyWeather(city) {
 
 }
 
-/**
- * Hämtar väderdatan för en stad och visar en markör/ikon om vädret är molnigt.
- * @param {{name: string, lat: number, lon: number}} city - stadens namn och koordinater
- * @returns {Promise}
- */
 async function showCloudyWeather(city) {
     const url = `https://api.open-meteo.com/v1/forecast?latitude=${city.lat}&longitude=${city.lon}&current=precipitation,weather_code,wind_speed_10m,cloud_cover&forecast_days=1&wind_speed_unit=ms`;
 
@@ -222,11 +191,6 @@ async function showSunnyCities() {
     }
 }
 
-/**
- * Visar alla städer som just nu har regnigt väder
- * Om inga städer matchas så visas i stället ett textmeddelande
- * @returns {Promise}
- */
 async function showRainyCities() {
     marker.clearLayers(); //för att rensa fält innan nästa klick
     const element = document.getElementById("map");
@@ -253,11 +217,6 @@ async function showRainyCities() {
 
 }
 
-/**
- * Visar alla städer som just nu har blåsigt väder
- * Om inga städer matchas så visas i stället ett textmeddelande
- * @returns {Promise}
- */
 async function showWindyCities() {
     marker.clearLayers(); //för att rensa fält innan nästa klick
     const element = document.getElementById("map");
@@ -283,11 +242,6 @@ async function showWindyCities() {
     }
 }
 
-/**
- * Visar alla städer som just nu har molnigt väder
- * Om inga städer matchas så visas i stället ett textmeddelande
- * @returns {Promise}
- */
 async function showCloudyCities() {
     marker.clearLayers(); //för att rensa fält innan nästa klick
     const element = document.getElementById("map");
@@ -320,23 +274,11 @@ async function showCloudyCities() {
 const elementSunny = document.getElementById("sunny");
 elementSunny.addEventListener("click", showSunnyCities);
 
-/**
- * Elementet är klickbart för regnigt väder
- * @type {HTMLElement}
- */
 const elementRainy = document.getElementById("rainy");
 elementRainy.addEventListener("click", showRainyCities);
 
-/**
- * Elementet är klickbart för blåsigt väder
- * @type {HTMLElement}
- */
 const elementWindy = document.getElementById("windy");
 elementWindy.addEventListener("click", showWindyCities);
 
-/**
- * Elementet är klickbart för molnigt väder
- * @type {HTMLElement}
- */
 const elementCloudy = document.getElementById("cloudy");
 elementCloudy.addEventListener("click", showCloudyCities);
